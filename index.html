@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise for You!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+        /* --- Animation for timeline items --- */
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+            z-index: 9999;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) translateX(0); }
+            100% { transform: translateY(120vh) translateX(var(--x-end)); }
+        }
+    </style>
+</head>
+<body class="bg-rose-50 text-gray-700">
+
+    <!-- --- Initial Modal --- -->
+    <div id="startModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 transition-opacity duration-1000">
+        <div class="text-center text-white p-8">
+            <h1 class="great-vibes text-6xl mb-4">I made a little something for you...</h1>
+            <button id="startButton" class="bg-rose-500 text-white font-bold py-3 px-6 rounded-full hover:bg-rose-600 transition-colors shadow-lg text-lg">
+                Click here to start the surprise!
+            </button>
+        </div>
+    </div>
+    
+    <!-- --- Background Music --- -->
+    <!-- REPLACE with a link to your song -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://dl.vgmdownloads.com/soundtracks/pokemon-game-boy-sounds-collection/zfhpbpev/1-01.%20Opening.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="confetti-container" class="fixed top-0 left-0 w-full h-full pointer-events-none"></div>
+
+
+    <!-- --- Main Content --- -->
+    <div id="mainContent" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- --- Hero Section --- -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center bg-rose-100 p-4">
+            <h2 class="great-vibes text-7xl md:text-9xl text-rose-800">Happy Birthday</h2>
+            <!-- CHANGE THE NAME -->
+            <h1 class="great-vibes text-7xl md:text-9xl text-rose-500 mt-4 mb-8">[Her Name]!</h1>
+            <p class="text-xl md:text-2xl text-rose-700">My favorite person in the whole wide world.</p>
+            <div class="mt-12 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- --- Our Story Section --- -->
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="great-vibes text-6xl text-center text-rose-500 mb-16">Our Unforgettable Moments</h2>
+                
+                <div class="relative">
+                    <!-- Central Timeline Line -->
+                    <div class="absolute left-1/2 top-0 h-full w-1 bg-rose-200 -ml-0.5"></div>
+
+                    <!-- --- MEMORY 1 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 flex justify-end">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">The Day We Met</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">I still remember the first time I saw you. It felt like something out of a movie. Who knew it was the start of something so special?</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">1</div>
+                            <div class="w-1/2 flex justify-start pl-12 md:pl-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fecdd3/44403c?text=Our+First+Photo" alt="Memory 1" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 2 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full flex-row-reverse">
+                            <div class="w-1/2 flex justify-start">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">Our First Adventure</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">That road trip was one for the books! Getting lost with you was more fun than any destination.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">2</div>
+                            <div class="w-1/2 flex justify-end pr-12 md:pr-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fbcfe8/44403c?text=Adventure+Photo" alt="Memory 2" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- --- MEMORY 3 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 flex justify-end">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">A Special Day</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">Describe another wonderful memory you shared together here.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">3</div>
+                            <div class="w-1/2 flex justify-start pl-12 md:pl-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fecdd3/44403c?text=Memory+Photo+3" alt="Memory 3" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 4 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full flex-row-reverse">
+                            <div class="w-1/2 flex justify-start">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">That Funny Moment</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">Remember that time we couldn't stop laughing? Add that story here.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">4</div>
+                            <div class="w-1/2 flex justify-end pr-12 md:pr-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fbcfe8/44403c?text=Memory+Photo+4" alt="Memory 4" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 5 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 flex justify-end">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">A Cozy Evening</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">Sometimes the quiet moments are the best. Describe a favorite cozy memory.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">5</div>
+                            <div class="w-1/2 flex justify-start pl-12 md:pl-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fecdd3/44403c?text=Memory+Photo+5" alt="Memory 5" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 6 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full flex-row-reverse">
+                            <div class="w-1/2 flex justify-start">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">Favorite Holiday</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">Was it a holiday, a vacation, or just a special celebration? Add the details here.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">6</div>
+                            <div class="w-1/2 flex justify-end pr-12 md:pr-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fbcfe8/44403c?text=Memory+Photo+6" alt="Memory 6" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 7 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 flex justify-end">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">Learning Something New</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">A time you supported each other or learned something new together.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">7</div>
+                            <div class="w-1/2 flex justify-start pl-12 md:pl-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fecdd3/44403c?text=Memory+Photo+7" alt="Memory 7" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 8 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full flex-row-reverse">
+                            <div class="w-1/2 flex justify-start">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">A Moment of Support</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">Describe a time when you were there for each other through thick and thin.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">8</div>
+                            <div class="w-1/2 flex justify-end pr-12 md:pr-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fbcfe8/44403c?text=Memory+Photo+8" alt="Memory 8" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- --- MEMORY 9 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 flex justify-end">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">Simply Beautiful</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">A simple, everyday moment that you cherish. It's often the small things!</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">9</div>
+                            <div class="w-1/2 flex justify-start pl-12 md:pl-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fecdd3/44403c?text=Memory+Photo+9" alt="Memory 9" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- MEMORY 10 --- -->
+                    <div class="mb-12 timeline-item">
+                        <div class="flex items-center w-full flex-row-reverse">
+                            <div class="w-1/2 flex justify-start">
+                                <div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left">
+                                    <h3 class="font-bold text-lg text-rose-500 mb-2">Looking to the Future</h3>
+                                    <!-- CHANGE THE MESSAGE -->
+                                    <p class="text-sm">A memory that makes you excited for all the adventures yet to come.</p>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">10</div>
+                            <div class="w-1/2 flex justify-end pr-12 md:pr-0">
+                                <!-- CHANGE THE IMAGE -->
+                                <img src="https://placehold.co/400x300/fbcfe8/44403c?text=Memory+Photo+10" alt="Memory 10" class="w-full md:w-10/12 rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --- ADD MORE MEMORIES HERE (copy/paste the blocks above) --- -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Letter Section --- -->
+        <section class="py-20 px-4 bg-rose-100">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="great-vibes text-6xl text-rose-500 mb-8">A Letter To You</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-left leading-relaxed">
+                    <!-- CHANGE THE LETTER -->
+                    <p class="mb-4"><span class="font-bold">My Dearest [Name],</span></p>
+                    <p class="mb-4">
+                        As you celebrate another year, I just wanted to take a moment to tell you how much you mean to me. Life is so much brighter and more beautiful with you in it. Your laughter is my favorite sound, and your smile my favorite sight.
+                    </p>
+                    <p class="mb-4">
+                        Thank you for every moment, every memory, and for being the incredible person you are. I can't wait to see what adventures this next year brings us.
+                    </p>
+                    <p class="text-right">
+                        All my love, always,<br>
+                        <!-- CHANGE YOUR NAME -->
+                        <span class="font-bold">[Your Name]</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Final Wish Section --- -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center p-4">
+            <h2 class="great-vibes text-7xl md:text-8xl text-rose-500">Make a wish!</h2>
+            <p class="text-xl md:text-2xl text-rose-700 mt-8 max-w-lg">May your birthday be as incredible as you are. Here's to you and another year of being wonderful!</p>
+        </section>
+
+    </div>
+
+    <script>
+        const startModal = document.getElementById('startModal');
+        const startButton = document.getElementById('startButton');
+        const mainContent = document.getElementById('mainContent');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const confettiContainer = document.getElementById('confetti-container');
+
+        startButton.addEventListener('click', () => {
+            startModal.style.opacity = '0';
+            mainContent.style.opacity = '1';
+            backgroundMusic.play().catch(error => {
+                // Autoplay was prevented.
+                console.log("Audio autoplay was prevented by the browser.");
+            });
+            setTimeout(() => {
+                startModal.style.display = 'none';
+                launchConfetti();
+            }, 1000); // Match duration of opacity transition
+        });
+
+        // Animate timeline on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        });
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+        
+        // Confetti function
+        function launchConfetti() {
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.animationDelay = `${Math.random() * 3}s`;
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                confetti.style.setProperty('--x-end', `${Math.random() * 100 - 50}vw`);
+                confettiContainer.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
