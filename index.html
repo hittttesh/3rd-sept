@@ -49,6 +49,18 @@
         .video-card:hover .play-icon {
             opacity: 1;
         }
+        /* Gift box animation */
+        #giftBox.open #giftLid {
+            animation: open-lid 0.5s forwards ease-in-out;
+        }
+        @keyframes open-lid {
+            0% { transform: translateY(0) rotate(0); }
+            100% { transform: translateY(-80px) rotate(-20deg); opacity: 0; }
+        }
+        /* --- Style for the voucher --- */
+        .voucher-main {
+            border: 2px dashed #f43f5e;
+        }
     </style>
 </head>
 <body class="bg-rose-50 text-gray-700">
@@ -129,14 +141,14 @@
                     </div>
 
                     <!-- --- MEMORY 3 to 10... -->
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">A Special Day</h3><p class="text-sm">Describe another wonderful memory you shared together here.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">3</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/spmp8BPL/Whats-App-Image-2025-09-01-at-3-01-58-PM.jpg" alt="Memory 3" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">That Funny Moment</h3><p class="text-sm">Remember that time we couldn't stop laughing? Add that story here.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">4</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://i.ibb.co/BKC5dmBQ/Whats-App-Image-2025-09-01-at-3-01-57-PM.jpg" alt="Memory 4" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">A Cozy Evening</h3><p class="text-sm">Sometimes the quiet moments are the best. Describe a favorite cozy memory.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">5</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/7Jn6mbjZ/Whats-App-Image-2025-09-01-at-9-54-58-AM.jpg" alt="Memory 5" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">Favorite Holiday</h3><p class="text-sm">Was it a holiday, a vacation, or just a special celebration? Add the details here.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">6</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://i.ibb.co/jkNhrzKT/Whats-App-Image-2025-09-01-at-12-57-44-PM.jpg" alt="Memory 6" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">Learning Something New</h3><p class="text-sm">A time you supported each other or learned something new together.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">7</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/jkNhrzKT/Whats-App-Image-2025-09-01-at-12-57-44-PM.jpg" alt="Memory 7" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">A Moment of Support</h3><p class="text-sm">Describe a time when you were there for each other through thick and thin.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">8</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://placehold.co/400x300/fbcfe8/44403c?text=Memory+Photo+8" alt="Memory 8" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">Simply Beautiful</h3><p class="text-sm">A simple, everyday moment that you cherish. It's often the small things!</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">9</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://placehold.co/400x300/fecdd3/44403c?text=Memory+Photo+9" alt="Memory 9" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
-                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">Looking to the Future</h3><p class="text-sm">A memory that makes you excited for all the adventures yet to come.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">10</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://placehold.co/400x300/fbcfe8/44403c?text=Memory+Photo+10" alt="Memory 10" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">A Special Day</h3><p class="text-sm">cuteee ladiess (P.S- My lady is the cutessttt!)</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">3</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/spmp8BPL/Whats-App-Image-2025-09-01-at-3-01-58-PM.jpg" alt="Memory 3" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">That Funny Moment</h3><p class="text-sm">Pretty sure, Uh guys were bitching about someone before this!.</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">4</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://i.ibb.co/BKC5dmBQ/Whats-App-Image-2025-09-01-at-3-01-57-PM.jpg" alt="Memory 4" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">TBH My fav pics tbh</h3><p class="text-sm">Matching dresses! homely vibess</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">5</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/7Jn6mbjZ/Whats-App-Image-2025-09-01-at-9-54-58-AM.jpg" alt="Memory 5" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">Opposite Poles</h3><p class="text-sm">Was it a holiday, a vacation, or just a special celebration? Whtever it was pretty sure uh guys nailed it!</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">6</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://i.ibb.co/jkNhrzKT/Whats-App-Image-2025-09-01-at-12-57-44-PM.jpg" alt="Memory 6" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">Three Musketeers</h3><p class="text-sm">Cuteness overloaded..how do I narrate the remaining part aisee</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">7</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/KzwwjYDF/Whats-App-Image-2025-09-02-at-9-54-53-PM.jpg" alt="Memory 7" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">Ekdum Gondas Muli</h3><p class="text-sm">keep smiling aisee hii</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">8</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://i.ibb.co/KxMS376y/Whats-App-Image-2025-09-02-at-6-49-13-AM.jpg" alt="Memory 8" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full"><div class="w-1/2 flex justify-end"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-right"><h3 class="font-bold text-lg text-rose-500 mb-2">Simply Beautiful</h3><p class="text-sm">Guys get some more photos!!!</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">9</div><div class="w-1/2 flex justify-start pl-12 md:pl-0"><img src="https://i.ibb.co/KcsbBSKx/IMG-20240117-WA0010.jpg" alt="Memory 9" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
+                    <div class="mb-12 timeline-item"><div class="flex items-center w-full flex-row-reverse"><div class="w-1/2 flex justify-start"><div class="w-full md:w-10/12 bg-white p-4 rounded-lg shadow-lg text-left"><h3 class="font-bold text-lg text-rose-500 mb-2">Looking to our future 'Nitya'</h3><p class="text-sm">Majhi Vesavchi Paru... (Nazar na laghe kisikii!!)</p></div></div><div class="w-10 h-10 bg-rose-500 rounded-full absolute left-1/2 -ml-5 z-10 flex items-center justify-center text-white font-bold">10</div><div class="w-1/2 flex justify-end pr-12 md:pr-0"><img src="https://i.ibb.co/d05h8q9f/Whats-App-Image-2025-09-02-at-10-13-19-PM.jpg" alt="Memory 10" class="w-full md:w-10/12 rounded-lg shadow-lg"></div></div></div>
                 </div>
             </div>
         </section>
@@ -146,10 +158,33 @@
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="great-vibes text-6xl text-rose-500 mb-8">A Letter To You</h2>
                 <div class="bg-white p-8 rounded-2xl shadow-xl text-left leading-relaxed">
-                    <p class="mb-4"><span class="font-bold">My Dearest [Name],</span></p>
-                    <p class="mb-4">As you celebrate another year, I just wanted to take a moment to tell you how much you mean to me. Life is so much brighter and more beautiful with you in it. Your laughter is my favorite sound, and your smile my favorite sight.</p>
-                    <p class="mb-4">Thank you for every moment, every memory, and for being the incredible person you are. I can't wait to see what adventures this next year brings us.</p>
-                    <p class="text-right">All my love, always,<br><span class="font-bold">[Your Name]</span></p>
+                    <p class="mb-4"><span class="font-bold">My Dearest Bacha,</span></p>
+                    <p class="mb-4">As you celebrate another year, I just wanted to take a moment to tell you how much you mean to me. I found a love, beautiful and sweet, and life is so much brighter with you in it. You're the 'someone' I was waiting for.</p>
+                    <p class="mb-4">Thank you for every moment and every memory. I love dancing through life with you, and I can't wait for all the adventures yet to come. Darling, you look perfect tonight and every night.</p>
+                    <p class="text-right">All my love, always,<br><span class="font-bold">Hitesh</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Gift Box Section --- -->
+        <section class="py-20 px-4 bg-rose-100">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="great-vibes text-6xl text-rose-500 mb-8">One Last Surprise...</h2>
+                <p class="mb-12 text-lg">Click the gift below to open it!</p>
+                <div id="giftBox" class="relative w-48 h-48 mx-auto cursor-pointer group transition-transform duration-200 hover:scale-105">
+                    <!-- Gift Box SVG -->
+                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                        <!-- Lid -->
+                        <g id="giftLid" class="transition-transform duration-500">
+                            <path d="M10 30 L90 30 L85 20 L15 20 Z" fill="#ef4444"/>
+                            <path d="M45 10 L55 10 L55 30 L45 30 Z" fill="#fca5a5"/>
+                            <path d="M50 10 C 60 0, 70 5, 70 15 C 70 25, 60 30, 50 30" fill="#fca5a5"/>
+                            <path d="M50 10 C 40 0, 30 5, 30 15 C 30 25, 40 30, 50 30" fill="#fca5a5"/>
+                        </g>
+                        <!-- Box Base -->
+                        <path d="M15 32 L85 32 L85 85 L15 85 Z" fill="#dc2626"/>
+                        <path d="M45 32 L55 32 L55 85 L45 85 Z" fill="#fca5a5"/>
+                    </svg>
                 </div>
             </div>
         </section>
@@ -185,7 +220,7 @@
                     <!-- --- VIDEO MESSAGE CARD 3 --- -->
                     <div class="video-card cursor-pointer group" data-video-id="JySmmncIdxc"> <!-- Replace with YouTube Video ID -->
                         <div class="relative rounded-lg overflow-hidden shadow-lg">
-                            <img src="https://placehold.co/300x300/fecdd3/44403c?text=Friend+2" alt="Video Message from [Name]" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            <img src="https://i.ibb.co/XkCMtW3V/Whats-App-Image-2025-09-02-at-9-54-55-PM.jpg" alt="Video Message from [Name]" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-icon">
                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
                             </div>
@@ -194,7 +229,7 @@
                     </div>
 
                     <!-- --- VIDEO MESSAGE CARD 4 --- -->
-                    <div class="video-card cursor-pointer group" data-video-id="VIDEO_ID_HERE"> <!-- Replace with YouTube Video ID -->
+                    <div class="video-card cursor-pointer group" data-video-id="9nl0MhvtTko"> <!-- Replace with YouTube Video ID -->
                         <div class="relative rounded-lg overflow-hidden shadow-lg">
                             <img src="https://i.ibb.co/939KQQ8t/Screenshot-2025-09-02-015350.png" alt="Video Message from Saiee" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-icon">
@@ -205,7 +240,7 @@
                     </div>
 
                     <!-- --- VIDEO MESSAGE CARD 5 --- -->
-                    <div class="video-card cursor-pointer group" data-video-id="VIDEO_ID_HERE"> <!-- Replace with YouTube Video ID -->
+                    <div class="video-card cursor-pointer group" data-video-id="Uj2NxUL98qU"> <!-- Replace with YouTube Video ID -->
                         <div class="relative rounded-lg overflow-hidden shadow-lg">
                             <img src="https://i.ibb.co/dw1xW66z/Whats-App-Image-2025-09-02-at-1-57-22-AM.jpg" alt="Video Message from [Name]" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-icon">
@@ -232,6 +267,24 @@
             <button id="closeModal" class="absolute -top-10 -right-2 text-white text-4xl font-bold">&times;</button>
             <div class="aspect-video">
                 <iframe id="videoPlayer" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- Voucher Modal (Replaced Poem Modal) --- -->
+    <div id="voucherModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[100] p-4">
+        <div class="bg-rose-50 p-6 rounded-2xl shadow-xl text-center max-w-md w-full relative">
+            <button id="closeVoucherModal" class="absolute top-2 right-4 text-gray-500 text-4xl font-bold">&times;</button>
+            <h3 class="great-vibes text-4xl text-rose-500 mb-4">A Special Coupon For My Bacha</h3>
+            <div class="bg-white p-6 rounded-lg voucher-main">
+                <p class="text-rose-800 font-bold text-2xl mb-3">One Romantic Dayout</p>
+                <p class="text-sm text-gray-600">This voucher is redeemable for a Shiny Day, complete with gifts, surprises, and endless pampering.</p>
+            </div>
+            <div class="text-left text-xs text-gray-400 mt-4 px-2">
+                <p><span class="font-bold">Terms & Conditions:</span><br>
+                - Must be redeemed with the person who gave you this.<br>
+                - Expires: Never.<br>
+                - Side effects may include extreme Kisses and Hugss.</p>
             </div>
         </div>
     </div>
@@ -311,11 +364,32 @@
                 stopVideo();
             }
         });
+
+        // --- Gift Box and Voucher Modal Logic (Updated) ---
+        const giftBox = document.getElementById('giftBox');
+        const voucherModal = document.getElementById('voucherModal');
+        const closeVoucherModal = document.getElementById('closeVoucherModal');
+
+        giftBox.addEventListener('click', () => {
+            giftBox.classList.add('open');
+            setTimeout(() => {
+                voucherModal.classList.remove('hidden');
+            }, 400); // Wait for lid animation
+        });
+
+        const hideVoucher = () => {
+            voucherModal.classList.add('hidden');
+            giftBox.classList.remove('open'); // Reset gift box
+        }
+
+        closeVoucherModal.addEventListener('click', hideVoucher);
+
+        voucherModal.addEventListener('click', (e) => {
+            if (e.target === voucherModal) {
+                hideVoucher();
+            }
+        });
     </script>
 </body>
 </html>
-
-
-
-
 
